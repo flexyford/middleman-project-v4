@@ -1,5 +1,3 @@
-require "lib/ember_helpers"
-
 ###
 # Page options, layouts, aliases and proxies
 ###
@@ -23,56 +21,6 @@ page '/*.txt', layout: false
 ###
 
 activate :ember
-
-##
-# Helpers are available in all template.
-#
-# Each helper runs in the context of the `Middleman::Application`
-helpers do
-  ##
-  # Generate Ember stylesheet link tags.
-  #
-  # This consists of the vendor.css and app.css. Call from within a template
-  # to bring in all the styles from the ember.
-  #
-  #   <% content_for :head do %>
-  #     <%= ember_stylesheet_link_tags "my-sweet-ember-app" %>
-  #   <% end %>
-  def ember_stylesheet_link_tags(app_name)
-    with_ember_app(app_name) do |ember_app|
-      <<-EOS
-    <link rel="stylesheet" href="#{url_for ember_app.vendor_css}"/>
-    <link rel="stylesheet" href="#{url_for ember_app.app_css}"/>
-EOS
-    end
-  end
-
-  ##
-  # Generate Ember stylesheet link tags.
-  #
-  # This consists of the vendor.css and app.css. Call from within a template
-  # bring in all the styles from ember.
-  #
-  #   <% content_for :foot do %>
-  #     <%= ember_stylesheet_link_tags "my-sweet-ember-app" %>
-  #   <% end %>
-  def ember_javascript_tags(app_name)
-    with_ember_app(app_name) do |ember_app|
-      <<-EOF
-      <script src="#{url_for ember_app.vendor_js}"></script>
-      <script src="#{url_for ember_app.app_js}"></script>
-EOF
-    end
-  end
-
-  ##
-  # Helpers are mixed into the Middleman::Application class,
-  # so we need to provide a way to access the ember app
-  # extensions from there.
-  def with_ember_app(app_name, &block)
-    extensions[:ember].with_ember_app(app_name, &block)
-  end
-end
 
 activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
