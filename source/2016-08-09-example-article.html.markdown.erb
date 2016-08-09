@@ -1,0 +1,20 @@
+---
+title: Ember Island Article Placeholder
+date: 2016-08-09
+tags: ember-islands placeholder
+published: false
+---
+<% content_for :head do  %>
+  <%= ember_stylesheet_link_tags "2016-08-09-example-article" %>
+<% end %>
+
+<% content_for :foot do  %>
+  <%= ember_javascript_tags "2016-08-09-example-article" %>
+<% end %>
+
+This is an placeholder article. It will link to an article which incorporates an ember application . . . soon
+
+<div
+    data-component='user-profile'
+    data-attrs='{"name": "Sally User", "id": "4"}'>
+</div>
