@@ -1,0 +1,11 @@
+{{! https://github.com/mitchlloyd/ember-islands#usage }}
+
+<h2 {{action 'showDetails'}}>
+  {{name}}
+</h2>
+
+{{#if isShowingDetails}}
+  <p>{{description}}</p>
+  {{user.email}}
+  {{user.address}}
+{{/if}}
