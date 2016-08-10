@@ -12,6 +12,7 @@ gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby]
 gem "middleman", "~> 4.1"
 gem "middleman-blog"
 gem "middleman-ember", path: "vendor/frontside/middleman-ember"
+gem 'middleman-sprockets'
 
 gem 'redcarpet', '~> 3.3', '>= 3.3.3'
 
